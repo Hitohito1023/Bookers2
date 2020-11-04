@@ -4,9 +4,11 @@
       <%= render 'users/info', user: current_user %>
       <%= render 'books/newbook', book: @book %>
     </div>
+
     <div class= "col-xs-9">
       <h2>Users</h2>
     　<table class="table">
+
     　   <thead>
     　     <tr>
     　       <th>image</th>
@@ -14,15 +16,19 @@
     　       <th></th>
     　     </tr>
         </thead>
+
         <tbody>
     　   <% @users.each do |user| %>
           <tr>
-    　       <td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, fallback: "no_image_mini.jpg" %> </td>
+    　       <td>
+    　         <%= attachment_image_tag user, :profile_image, :fill, 50, 50, fallback: "no_image_mini.jpg" %>
+    　       </td>
     　       <td><%= user.name %></td>
     　       <td><%= link_to"Show",user_path(user.id) %></td>
     　     </tr>
     　   <% end %>
     　   </tbody>
+
     　</table>
     </div>
   </div>
